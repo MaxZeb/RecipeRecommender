@@ -1,13 +1,21 @@
 Package: RecipeRecommender
-Title: What the Package Does (One Line, Title Case)
+Title: matching recipes given ingredients
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Max",
+           family = "Zeb",
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: Given Ingredients, the first function in this package recommends dishes. The second function can give an abstract of the favorite dish. This package is still wip, therefore more functionalities will be added later
+License: MIT
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 2.1.0)
+VignetteBuilder: knitr
+Imports: 
+    httr

@@ -1,0 +1,43 @@
+---
+title: "RecipeRecommender"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{RecipeRecommender}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction 
+This package provied a environment to the well-known [Spoonacular](spoonacular.com) website. This website provides all kinds of information about food, nutrition and everything connected to it. 
+
+# Prerequisites 
+Before looking at the code one must set up an application on [RapidAPI](rapidapi.com/) in order to receive a token and beeing able to access the data.
+
+[Spoonacular](spoonacular.com) only provides a freemium API, so be careful with the amount of data requested. 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+load(file="data/sample_data.RData")
+```
+
+```{r setup, eval=FALSE}
+library(RecipeRecommender)
+```
+
+# Core Functionalities
+### Recommendations
+Given a list of ingredients the first package function can return a certain number of recipe recommendations. 
+
+```{r recommendations, eval=FALSE}
+get_recommendations(list("beer", "deer"), 10, your_key)
+```
+
+### Recipe Summary
+Then, once one decided which the prefered recipe is, it is possible to get the summary of the recipe of choice. 
+
+```{r summary, eval=FALSE}
+get_recipe("985221", your_key)
+```
