@@ -20,7 +20,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-load(file="data/sample_data.RData")
 ```
 
 ```{r setup, eval=FALSE}
