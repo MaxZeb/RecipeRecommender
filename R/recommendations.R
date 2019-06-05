@@ -1,3 +1,12 @@
+#' This function gives the summary to a specific recipe-id gathered from get_recommendations.
+#'
+#' @param ingredients a list of characters, specifying the ingredients
+#' @param no_results integer specifying the number of recommendations
+#' @param key app credentials from rapidapi
+#'
+#' @return Returns a dataframe, which recommends recipes based on the specified ingredients.
+#'
+
 get_recommendations <- function(ingredients, no_results, key){
     if(no_results > 50){ stop("Don't burn your credit card!!!") }
     # set key
@@ -10,7 +19,7 @@ get_recommendations <- function(ingredients, no_results, key){
                   "number=", as.character(no_results), "&ranking=1",
                   "&ignorePantry=false", "&ingredients=", ingreds)
     # make API call
-    response <- httr::GET(url, add_headers(key))
+    response <- httr::GET(url, httr::add_headers(key))
     # parse content
     ds_contents <- httr::content(response, as="parsed")
     # build result dataframe
