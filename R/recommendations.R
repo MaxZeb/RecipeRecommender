@@ -6,6 +6,7 @@
 #'
 #' @return Returns a dataframe, which recommends recipes based on the specified ingredients.
 #'
+#' @export
 
 get_recommendations <- function(ingredients, no_results, key){
     if(no_results > 50){ stop("Don't burn your credit card!!!") }

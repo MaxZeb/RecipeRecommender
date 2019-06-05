@@ -5,6 +5,7 @@
 #'
 #' @return Returns a single character string summarizing the specific recipe
 #'
+#' @export
 
 get_recipe <- function(id, key){
     # make url
